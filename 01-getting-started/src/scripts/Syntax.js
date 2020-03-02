@@ -70,14 +70,44 @@ const syntaxFunction = {
           };
           return sum;
     },
-    sampleWhileLoop: (x) => {
+    sampleWhileLoop: (number) => {
         var i=0;
-        var text="";
-        while (i <x) {
-        text+="i";
+        var sum=0;
+        while (i <number) {
+        sum=sum+i;
         i++;
         };
+        return (sum);
     },
+    sampledoWhile: (number_arrays) => {
+         let i=0;
+         let sum=0;
+        do {
+           sum= number_arrays[i]+sum;
+           i++;
+           }
+      while (i < number_arrays.length);  
+       return (sum);
+     },
+
+     sampleforEach: (number_arrays) => {
+     let sum = 0; 
+     number_arrays.forEach(myfunction);
+     function myfunction(item){
+      sum+=item;
+     };
+       return (sum);
+  },
+      sampleObjects: () => {
+        let person = {fname:"John", lname:"Deo", age:25}; 
+        let text="";
+        let x=0;
+        for (x in person) {
+            text += person[x] + " ";
+          }
+        return (text)
+      },
+      
 
 
         

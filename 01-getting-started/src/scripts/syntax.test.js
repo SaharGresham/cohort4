@@ -44,10 +44,26 @@ test ('sampleforin', () =>{
 test ('sampleWhileLoop', () =>{
          
     
-    expect(syntaxFunction.sampleWhileLoop (2)).toEqual("012");
-    expect(syntaxFunction.sampleforin (3)).toBe("0123");
+    expect(syntaxFunction.sampleWhileLoop (1)).toEqual(0);
+    expect(syntaxFunction.sampleWhileLoop(3)).toEqual(3);
 });
-
+test ('sampledoWhile', () =>{
+         
+    
+    expect(syntaxFunction.sampledoWhile ([1,2])).toEqual(3);
+    expect(syntaxFunction.sampledoWhile([1,2,3])).toEqual(6);
+   });
+   test ('sampleforEach', () =>{
+         
+    
+   expect(syntaxFunction.sampleforEach ([1,2])).toEqual(3);
+   expect(syntaxFunction.sampleforEach([1,2,3])).toEqual(6);
+   });
+   test ('sampleObjects', () =>{
+         
+    
+   expect(syntaxFunction.sampleObjects ({fname:"John", lname:"Deo", age:25})).toBe("John Deo 25 ");
+   });
 
 
 test ('check add12Num' , () => {
