@@ -1,0 +1,103 @@
+
+// loops 
+// for
+// for/in
+// while
+// do while
+// forEach (with array and function)
+// Objects / Dictionaries
+// declare object
+// lookup key to retrieve value
+// /
+const syntaxFunction = {
+    //define attributes / variables
+    // number
+    NumberT: (x) => {
+        return("This is a number");
+    },
+    //sting
+    StringT: (x) =>{
+        return ("This is a string");
+    },
+    //boolean
+
+    BooleanT: (x) => {
+        return ("This is a boolean");
+    },
+    //array
+    ArrayT: (x) => {
+        return ("This is an array");
+    },
+    // dictionary
+    DictionaryT: (x) => {
+        return ("This is a dictionary");
+    },
+    //undefined
+    UndifinedT: (x) => {
+        return ("This is undifined");
+    },
+            
+    // sample if / else
+    SampleIfElse: () =>{
+        var hour = new Date().getHours(); 
+        if (hour < 18) {
+        return("Good Day");
+        } else {
+         return ("Good Evening");
+        }
+      },
+      // arrays
+    SampleArrays: (x) =>{
+        x.splice(0,0,"Cauliflower"); // add to the front
+        x.push("Cucumber"); // add to the end
+        x[1]="Eggplant";// update values
+        return(x);
+    },
+    SampleLoop: (x) =>{
+        var i;
+        for (i = 0; i < x.length; i++) {
+          x[i]= x[i] + 10
+        }; 
+        return(x);
+
+    },
+    sampleforin: (number_arrays) =>{
+       
+        var x;
+        var sum=0;
+        for (x in number_arrays) {
+            sum += number_arrays[x]
+          };
+          return sum;
+    },
+    sampleWhileLoop: (x) => {
+        var i=0;
+        var text="";
+        while (i <x) {
+        text+="i";
+        i++;
+        };
+    },
+
+
+        
+    
+    
+
+    
+    add12Num: (x) => {
+
+     return x+12;
+    },
+   
+    add12Str: (x) => {
+        return x+12;
+    },
+    add12Bln: (x) =>{
+        if (Boolean(x)){
+            return "true12";}
+         return "false12";
+    },
+
+}
+export default syntaxFunction;
