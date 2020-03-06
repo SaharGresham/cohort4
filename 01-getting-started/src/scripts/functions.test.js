@@ -13,3 +13,11 @@ test('Does that add function work?', () => {
     expect(functions.add(1,2)).toBe(3);
     expect(functions.add(101,202)).toBe(303);
 });
+test('Does that multiply function work?', () => {
+    expect(functions.multiply(1,2)).toBe(2);
+    expect(functions.multiply(10,3)).toBe(30);
+});
+test('Does that division function work?', () => {
+    expect(functions.division(1,2)).toBe(0.5);
+    expect(functions.division(10,5)).toBe(2);
+});

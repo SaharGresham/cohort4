@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <link rel="Stylesheet" href="Style.css">
+	<title>
+    </title>
+</head>
+<body>
+    
+    <form name=" My Calculator">
+        <table>
+           <tr>
+              <td colspan="4"></td>
+               <td><input  type="number" placeholder="Type a number" id="myInput1"></input></td>
+               <td><input  type="number" placeholder="Type a number" id="myInput2"></input></td>
+               <td><input type="number" name="display" id="display" disabled></td>
+             
+              
+           </tr>
+           <tr>
+            <td colspan="4"></td>
+            <td><input type="button" class="operator" name="plus" value="+" id="plus"></td>
+            <td><input type="button" class="operator" name="minus" value="-" id="minus" ></td>
+            <td><input type="button" class="operator" name="times" value= "*" id="times" ></td>
+            <td><input type="button" class="operator" name="div" value="/" id="div" ></td>
+
+           </tr>
+    
+    
+    <!-- <p id="demo"></p>
+   <script>
+      document.getElementById("myBtn").addEventListener("click", onButtonClicked);
+      document.getElementById("myBtn").addEventListener("click",getInputValue);
+      document.getElementById("myBtn").addEventListener("click",size);
+
+      function onButtonClicked () {
+  
+        console.log('I’m in the button click event'); 
+    }
+    function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("myInput").value;
+            
+            // Displaying the value
+            console.log(inputVal);
+    }
+    function size() {
+             var message;
+             var parameter = document.getElementById("myInput").value;
+             
+    
+            if (parameter < 10) {
+             message = "< 10 - ‘small’";
+            } else if ( parameter < 20) {
+              message = "10 - 19 - ‘med’";
+            } else if (parameter>20) {
+              message = ">= 20 ‘large’";
+            } else {
+              message="N0 Number";
+            }
+
+         document.getElementById("demo").innerHTML = message;
+  } -->
+       </table>
+      </form>
+      <script src="./main.js" type="module" >
+      
+    
+      </script>
+    
+</body>
+</html>

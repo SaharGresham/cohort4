@@ -129,5 +129,18 @@ const syntaxFunction = {
          return "false12";
     },
 
+calc_tax: (amount) => {
+    let tax=0;
+    if (amount <= 48535){
+        tax= (amount*0.15) ;
+    else if ( 45535< amount <= 97069){
+        tax= (amount-48535)*0.2+ 48535*0.15;
+    
+    }
+    return (tax);
+
+},
+
+
 }
 export default syntaxFunction;

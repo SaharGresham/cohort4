@@ -64,6 +64,11 @@ test ('sampledoWhile', () =>{
     
    expect(syntaxFunction.sampleObjects ({fname:"John", lname:"Deo", age:25})).toBe("John Deo 25 ");
    });
+   test ('calc_tax', () =>{
+         
+    
+    expect(syntaxFunction.calc_tax (45000)).toEqual(6750);
+    });
 
 
 test ('check add12Num' , () => {

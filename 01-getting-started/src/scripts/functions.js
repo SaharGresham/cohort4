@@ -6,6 +6,7 @@ const functions = {
         if (num < 20) return "medium";
         return "large";
     },
+    
 
     add: (num1, num2) => {
         return num1 + num2;
@@ -13,9 +14,15 @@ const functions = {
 
     subtract: (num1, num2) => {
         return num1 - num2;
-    }
-
     
+    },
+    multiply: (num1, num2) => {
+        return num1*num2;
+    },
+
+    division: (num1, num2) => {
+        return num1/num2;
+    },
 };
 
 export default functions;
