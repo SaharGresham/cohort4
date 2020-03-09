@@ -6,7 +6,7 @@ const functions = {
         if (num < 20) return "medium";
         return "large";
     },
-    
+
 
     add: (num1, num2) => {
         return num1 + num2;
@@ -23,6 +23,30 @@ const functions = {
     division: (num1, num2) => {
         return num1/num2;
     },
+
+    
+    calctaxes: (amount) => {
+        let tax=0;
+        if(amount > 214368) {
+           
+            tax= 48535*0.15+(97069-48535)*0.205+(150473-97069)*.26+
+        (214368-150473)*0.29+(amount-214368)*0.33;
+        }   
+       else if (amount>150473) {
+           
+            tax = 48535*0.15+(97069-48535)*0.205+(150473-97069)*.26+(amount-150473)*0.29;  
+       }else if (amount>97069) {
+        
+                tax =48535*0.15+(97069-48535)*0.205+(amount-97069)*.26;  
+      } else if( amount >48535 ){
+                tax = (amount - 48535) *0.205 + (48535)*0.15; 
+      }if (amount <= 48535){
+                    tax = (amount) * 0.15;
+      }
+      return (tax);
+
+    },
+  
 };
 
 export default functions;

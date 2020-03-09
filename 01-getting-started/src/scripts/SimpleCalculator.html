@@ -2,6 +2,7 @@
 <html>
     
 <head>
+  <meta charset="utf-8">
     <link rel="Stylesheet" href="Style.css">
 	<title>
     </title>
@@ -28,42 +29,21 @@
            </tr>
     
     
-    <!-- <p id="demo"></p>
-   <script>
-      document.getElementById("myBtn").addEventListener("click", onButtonClicked);
-      document.getElementById("myBtn").addEventListener("click",getInputValue);
-      document.getElementById("myBtn").addEventListener("click",size);
-
-      function onButtonClicked () {
-  
-        console.log('I’m in the button click event'); 
-    }
-    function getInputValue(){
-            // Selecting the input element and get its value 
-            var inputVal = document.getElementById("myInput").value;
-            
-            // Displaying the value
-            console.log(inputVal);
-    }
-    function size() {
-             var message;
-             var parameter = document.getElementById("myInput").value;
-             
     
-            if (parameter < 10) {
-             message = "< 10 - ‘small’";
-            } else if ( parameter < 20) {
-              message = "10 - 19 - ‘med’";
-            } else if (parameter>20) {
-              message = ">= 20 ‘large’";
-            } else {
-              message="N0 Number";
-            }
-
-         document.getElementById("demo").innerHTML = message;
-  } -->
+    
        </table>
       </form>
+      <section>
+        <h1>Income Tax Calculator</h1>
+        <label>Enter taxable income:</label>
+        <input type="number" id="income" />
+        <input type="button" value="calculate" name="calculate" id="calculate" /><br><br>
+        
+        <label>Income tax owed:</label>
+        <input type="text" id="tax"> disabled <br>
+  
+    </section>
+        
       <script src="./main.js" type="module" >
       
     

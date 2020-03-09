@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: #888;
-}
+} */
 
 table {
   margin: auto;
@@ -23,13 +23,15 @@ input {
   color: #495069;
   background-color: #fff;
   border-radius: 4px;
-  width: 60px;
+  width: 150px;
   height: 50px;
   float: left;
   margin: 5px;
   font-size: 20px;
   box-shadow: 0 4px rgba(0,0,0,0.2);
   margin-bottom: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 input:hover {
@@ -37,7 +39,7 @@ input:hover {
   color: #495069;
   background-color: #fff;
   border-radius: 4px;
-  width: 60px;
+  width: 180px;
   height: 50px;
   float: left;
   margin: 5px;
@@ -46,12 +48,13 @@ input:hover {
 }
 
 input:active {
+  display:inline-flexbox;
   top: 4px;
   border: 0 solid #000;
   color: #495069;
   background-color: #fff;
   border-radius: 4px;
-  width: 60px;
+  width: 180px;
   height: 50px;
   float: left;
   margin: 5px;
@@ -101,4 +104,20 @@ input:active {
   top: 4px;
   box-shadow: none;
 }
-
+h1 {
+  color: blue;
+  margin-top: 0;
+  }
+  section {
+  padding: 1em 2em;
+  }
+  label {
+      display:inline-flexbox;
+      width: 300px;
+      max-width: 320px;
+      font-size: 26px;
+      text-align: right;
+      background-color: #bcbd95;
+      float: left;
+  }
+  

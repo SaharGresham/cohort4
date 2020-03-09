@@ -34,3 +34,12 @@ div.addEventListener('click', (() =>{
     //display.innerHTML=functions.division(num1,num2);
     document.getElementById("display").value=parseInt(functions.division (num1,num2));
 }));
+calculate.addEventListener('click', (() =>{
+    let amount =parseFloat(document.getElementById("income").value);
+    console.log(amount);
+    console.log(functions.calctaxes (amount));
+    console.log (tax);
+   
+    document.getElementById("tax").value=functions.calctaxes (amount).toFixed(2);
+    
+}));

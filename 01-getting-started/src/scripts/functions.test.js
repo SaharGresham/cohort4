@@ -21,3 +21,10 @@ test('Does that division function work?', () => {
     expect(functions.division(1,2)).toBe(0.5);
     expect(functions.division(10,5)).toBe(2);
 });
+test('Does that calctaxes function work?', () => {
+    expect(functions.calctaxes(30000)).toBe(4500);
+    expect(functions.calctaxes(60000)).toBe(9630.575);
+    expect(functions.calctaxes(110000)).toBe(20591.780000000002);
+    expect(functions.calctaxes(160000)).toBe(33877.590000000004);
+    // expect(functions.calctaxes(250000)).toBe(48580.325);
+});
