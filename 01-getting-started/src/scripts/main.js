@@ -41,5 +41,5 @@ calculate.addEventListener('click', (() =>{
     console.log (tax);
    
     document.getElementById("tax").value=functions.calctaxes (amount).toFixed(2);
-    
+    document.getElementById("effective").value=(((functions.calctaxes (amount))/amount)*100).toFixed(2);
 }));

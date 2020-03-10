@@ -112,12 +112,18 @@ h1 {
   padding: 1em 2em;
   }
   label {
-      display:inline-flexbox;
+    
       width: 300px;
       max-width: 320px;
       font-size: 26px;
       text-align: right;
       background-color: #bcbd95;
       float: left;
+  }
+  .taxcalculation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
   }
   
