@@ -28,3 +28,15 @@ test('Does that calctaxes function work?', () => {
     expect(functions.calctaxes(160000)).toBe(33877.590000000004);
     // expect(functions.calctaxes(250000)).toBe(48580.325);
 });
+test('Does that array function work?', () => {
+    expect(functions.addtoarray([],3)).toStrictEqual([3]);
+    expect(functions.addtoarray([1],3)).toStrictEqual([1,3]);
+});
+test('Does that sumarray function work?', () => {
+    expect(functions.sumarray([1,2])).toBe(3);
+    expect(functions.sumarray([0,5,10,15,20])).toBe(50);
+});
+test('Does that dictionaryfunction work?', () => {
+    expect(functions.dictionaryfunction('NB')).toBe("New Brunswick");
+    expect(functions.dictionaryfunction('mx')).toBeFalsy();
+});

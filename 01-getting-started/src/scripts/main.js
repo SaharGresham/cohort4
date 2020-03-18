@@ -4,6 +4,7 @@ import functions from './functions.js';
 //
 // Add the event listeners
 // 
+let arr=[1,3];
 
 
 plus.addEventListener('click', (() =>{
@@ -43,3 +44,46 @@ calculate.addEventListener('click', (() =>{
     document.getElementById("tax").value=functions.calctaxes (amount).toFixed(2);
     document.getElementById("effective").value=(((functions.calctaxes (amount))/amount)*100).toFixed(2);
 }));
+
+addNumber.addEventListener("click", e => {
+     arr = functions.addtoarray(arr,parseFloat(myInput.value));
+     if (isNaN(parseFloat(myInput.value))){
+      document.getElementById("output").value= functions.Messages['two'];
+    } else{
+        document.getElementById("output").value= functions.Messages['one'];
+    }
+
+    //  console.log(arr);
+     console.log("Inside event listener.");
+});
+
+showArray.addEventListener ("click", e => { 
+    document.getElementById("output").value = functions.showarray(arr);
+    // console.log(arr);
+
+});
+totalNumbers.addEventListener ("click", e => { 
+    document.getElementById("output").value = functions.sumarray(arr);
+    // console.log(arr);
+
+});
+
+totalNumbers.addEventListener ("click", e => { 
+    document.getElementById("output").value = functions.sumarray(arr);
+    // console.log(arr);
+
+});
+
+clearArray.addEventListener ("click", e => { 
+    document.getElementById("output").value = functions.cleararray(arr);
+    console.log(arr);
+
+});
+
+displayLngname.addEventListener ("click", e => { 
+    let prov = document.getElementById("myProvince").value;
+    document.getElementById("outputDic").value = functions.dictionaryfunction(prov);
+    // document.getElementById("outputDic").value = functions.dictionaryfunction(myProvince).value;
+    console.log(prov);
+
+});

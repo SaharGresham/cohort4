@@ -1,5 +1,19 @@
 
 const functions = {
+    provincename: {'AB':"Alberta", 'BC':"British Clombia", 'MB': "Manitoba",
+              'NB': "New Brunswick",		
+              'NL':	"Newfoundland and Labrador",
+              'NS':	"Nova Scotia",
+              'NT':"Northwest Territories",	
+              'NU':	"Nunavut",
+              'ON':	"Ontario",	
+              'PE':	"Prince Edward Island",
+              'QC':	"Quebec",	
+             'SK':	"Saskatchewan",	
+              'YT':	"Yukon",
+            },
+     Messages:{'one':"Number added to the array",
+                'two': "Input is not a valid number"},
     
     size: (num) => {
         if (num < 10) return "small";
@@ -44,8 +58,41 @@ const functions = {
                     tax = (amount) * 0.15;
       }
       return (tax);
-
     },
+   
+    addtoarray: (numberarray,inputnumber) =>{
+        // if(typeof inputnumber == 'number'){
+        //     numberarray.push(Number(inputnumber));
+        //     return (numberarray); 
+        //  }else{
+        //   return (numberarray);
+        // }
+        if(isNaN(inputnumber)){
+            return(numberarray);
+        }else{numberarray.push(Number(inputnumber));
+            return (numberarray);
+        }
+    },
+
+      showarray: (numberarray) => {
+         
+             return ""+numberarray;
+              
+          },
+          sumarray: (numberarray) =>{
+              return numberarray.reduce ((a,b) => a+b,0 );
+          },
+          cleararray: (numberarray) =>{
+              return [];
+          },
+          dictionaryfunction: (province) =>{
+              
+              return functions.provincename[province];
+          },
+
+      
+
+    
   
 };
 

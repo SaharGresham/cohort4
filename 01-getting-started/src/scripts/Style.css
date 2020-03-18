@@ -34,7 +34,7 @@ input {
   overflow-y: hidden;
 }
 
-input:hover {
+/* input:hover {
   border: 0 solid #000;
   color: #495069;
   background-color: #fff;
@@ -45,9 +45,9 @@ input:hover {
   margin: 5px;
   font-size: 20px;
   box-shadow: 0 4px #b0d2cf;
-}
+} */
 
-input:active {
+/* input:active {
   display:inline-flexbox;
   top: 4px;
   border: 0 solid #000;
@@ -60,7 +60,7 @@ input:active {
   margin: 5px;
   font-size: 20px;
   box-shadow: none;
-}
+} */
 
 #display {
   width: 265px;
@@ -126,4 +126,64 @@ h1 {
     flex-direction: column;
     text-align: center; 
   }
+  .numberArray{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px;
+    width: 50%;
+    height: 40%;
+    border: 2px;
+    border-style: dashed;
+    padding: 20px;
+    background-color: aqua;
+    }
+    #addNumber{
+      margin-left: 170px;
+    }
+    #myInput{
+      width: 265px;
+      margin-left: 350px;
+      color: rgb(218, 32, 119);
+      font-size: 18px;
+      text-align: center; 
+    }
+    #output{
+    width: 265px;
+    margin-left: 350px;
+    color: rgb(218, 32, 119);
+    font-size: 18px;
+    text-align: center; 
+  }
+ 
+  .dictionaries{
+    width: 800px;
+    text-align: center; 
+    margin: 0 auto;
+    border: 2px;
+    width: 50%;
+    height: 30%;
+    border-style: dashed;
+    padding: 20px;
+    background-color: aqua;
+    
+    }
+    #myProvince{
+      margin-left: 330px;
+      width: 300px;
+      text-align: center;
+     
+    }
+    #displayLngname{
+      margin-left: 380px;
+      color: goldenrod;
+  
+    }
+    #outputDic{
+      margin-left: 380px;
+      color: rgb(218, 32, 119);
+      text-align: center
+  
+    }
+   
   
