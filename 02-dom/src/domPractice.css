@@ -1,0 +1,19 @@
+.domArea{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px;
+    width: 50%;
+    height: 40%;
+    border: 2px;
+    border-style: solid;
+    padding: 20px;
+    background-color: aqua;
+}
+.centered{
+    text-align: center; 
+    list-style-position:inside;
+    /* 
+    
+    display:none; */
+}
