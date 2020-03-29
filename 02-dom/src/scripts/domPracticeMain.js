@@ -1,5 +1,6 @@
 import functions from './domPracticeFunction.js'
 let counter=3;
+let counting=0;
 
 divArea.addEventListener("click", e => {
     console.log("You Clicked, at your command");
@@ -31,22 +32,31 @@ if (e.target.textContent === "AddBefore") {
               functions.deleteItem(counter);
             //   counter=counter-1;
         };
+    })
+ 
+    containerLeft.addEventListener("click", e => {
+       
+        if (e.target.nodeName === 'BUTTON') {
+            if (e.target.textContent === "Before"){
+               
+                functions.addLeftCardBefore(e.target.parentElement,  "LeftCard "+ counting++);
+               
+            };
+            if (e.target.textContent === "Push Me"){
+                functions.pushCard(e.target,  "LeftCard "+ counting++);
+                console.log(e.target);
+  };
+
+            if (e.target.textContent === "After"){
+                functions.addLeftCardAfter(e.target.parentElement,  "LeftCard "+ counting++);
+        };
+
+        if (e.target.textContent === "DeleteCard"){
+            functions.deleteTheCard(e.target.parentElement);
+            console.log(e.target.parentElement);
+        };
+}
+    })
 
 
-// //    idAdd.addEventListener("click",(() =>{
-// //     let addlist=document.getElementById("mylist");
-// //     // var entry = document.createElement('li');
-// //     // document.getElementById("mylist").createElement('li')
-// //     // entry.appendChild(document.createTextNode("Item"+""+counter));
-// //     // mylist.appendChild(entry);
-// //      let someItem= document.createElement('li');
-// //      someItem.appendChild(document.createTextNode("Item n"));
-// //      addlist.appendChild(someItem);
-     
 
-
-
-//     // document.getElementById("display").value=functions.show().tostring();
-//     // console.log(functions.show().tostring());
-// // }));
-})

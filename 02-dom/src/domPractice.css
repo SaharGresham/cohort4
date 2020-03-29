@@ -8,12 +8,76 @@
     border: 2px;
     border-style: solid;
     padding: 20px;
-    background-color: aqua;
+    background-color: aqua;}
+    #idButton{
+        color: rgb(235, 21, 139);
+        height: 100px;
+        width: 150px;
+        text-align: center;
+        font-size: 200%;
+        display: flex;
+        background-color: lightblue;
+    
+    }
+
+.leftCard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: block;
+
+    background-color: rgb(193, 212, 16);
+    transition: 0.3s;
+    height: 70px;
+    width: 250px;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
 }
+.container  {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+     z-index: 1; 
+    
+    padding-top: 20px;
+   
+    /* padding-top: 20px; */
+  }
+  
+.Left{
+    height:100%;
+    width: 40%;
+    left:0;
+    padding: 10px;
+    display: left;
+    justify-content: space-between;
+    overflow:scroll;  
+  }
+  .Right{
+    Right:0; 
+    position:right;
+    display: right;
+    justify-content: space-between;
+    overflow:scroll;
+    
+  }
+  .rightCard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: block;
+    background-color: rgb(193, 212, 16);
+    transition: 0.3s;
+    height: 500px;
+    width: 500px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+  }
+
 .centered{
     text-align: center; 
     list-style-position:inside;
-    /* 
     
-    display:none; */
 }
