@@ -11,8 +11,14 @@
      withdraw(amount){
           this.balance= this.balance-amount;
      }
-     showBalance(){ return this.balance;}
-
-     
+     showBalance(){ return this.balance;}    
  }
- export default {account} ;
+ function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].name === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+
+ export default {search, account} ;

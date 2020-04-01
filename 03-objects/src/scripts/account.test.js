@@ -12,11 +12,12 @@ test ('test the class  parameters', () => {
 })
 const account1= new ooStuff.account('001',35);
 const account2= new ooStuff.account('002',500);
-const account4= new ooStuff.account('002',7000);
+const account4= new ooStuff.account('004',7000);
 const accounts=[];
     accounts.push(account1);
     accounts.push(account2);
    const account3= accounts.push (new ooStuff.account('003',10000));
+   accounts.push(account4);
 test ('test the constructor in class', () => {
     // const accounts=[];
     // accounts.push(account1);
