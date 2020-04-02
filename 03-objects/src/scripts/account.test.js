@@ -30,15 +30,27 @@ test ('test the constructor in class', () => {
 test ('test the deposit in class', () => {
     account1.deposit(400);
     expect(accounts[0].balance).toBe(435);   
+    account2.deposit(0);
+    expect(accounts[1].balance).toBe(500);
+
     
 })
 test ('test the withdraw in class', () => {
   
     account4.withdraw(2000);
-    expect(account4.balance).toBe(5000);   
+    expect(account4.balance).toBe(5000); 
+    account4.withdraw(6000);
+    expect(account4.balance).toBe(-1000);   
     
 })
-test ('test the showBalance in class', () => {
-    console.log ('The balance for account number 4 is'+ account4.showBalance())
-    
+
+test ('test isPositive in class', () => {
+    account2.isPositive();
+    expect(accounts[1].balance).toBe(500);    
 })
+test ('test isAllowed in class', () => {
+    account4.isAllowed(500);
+    expect(account4.balance).toBe(-1000);    
+    expect(account2.isAllowed(500)).toBe(true);  
+})
+

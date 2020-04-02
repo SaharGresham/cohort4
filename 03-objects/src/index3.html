@@ -4,137 +4,14 @@
     <title>Account registration form</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <style>
-      html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      }
-      h1 {
-      margin: 0;
-      font-weight: 400;
-      }
-      h3 {
-      margin: 12px 0;
-      color: #8ebf42;
-      }
-      .main-block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      }
-      fieldset {
-      border: none;
-      border-top: 1px solid #8ebf42;
-      }
-      .account-details, .personal-details {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .account-details >div, .personal-details >div {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      }
-      .account-details >div, .personal-details >div , input, label {
-      width: 100%;
-      }
-      label {
-      padding: 0 5px;
-      text-align: right;
-      vertical-align: middle;
-      }
-      input {
-      padding: 5px;
-      vertical-align: middle;
-      }
-      .checkbox {
-      margin-bottom: 10px;
-      }
-      select, .children, .gender, .bdate-block {
-      width: calc(100% + 26px);
-      padding: 5px 0;
-      }
-      select {
-      background: transparent;
-      }
-      .gender input {
-      width: auto;
-      } 
-      .gender label {
-      padding: 0 5px 0 0;
-      } 
-      .bdate-block {
-      display: flex;
-      justify-content: space-between;
-      }
-      .birthdate select.day {
-      width: 35px;
-      }
-      .birthdate select.mounth {
-      width: calc(100% - 94px);
-      }
-      .birthdate input {
-      width: 38px;
-      vertical-align: unset;
-      }
-      .checkbox input, .children input {
-      width: auto;
-      margin: -2px 10px 0 0;
-      }
-      .checkbox a {
-      color: #8ebf42;
-      }
-      .checkbox a:hover {
-      color: #82b534;
-      }
-      button {
-      width: 100%;
-      padding: 10px 0;
-      margin: 10px auto;
-      border-radius: 5px; 
-      border: none;
-      background: #8ebf42; 
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      }
-      button:hover {
-      background: #82b534;
-      }
-      @media (min-width: 568px) {
-      .account-details >div, .personal-details >div {
-      width: 50%;
-      }
-      label {
-      width: 40%;
-      }
-      input {
-      width: 60%;
-      }
-      select, .children, .gender, .bdate-block {
-      width: calc(60% + 16px);
-      }
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    
   </head>
   <body>
     <div class="main-block">
-    <form action="/">
+    <div class= "form">
       <h1>Create a free account</h1>
-      <fieldset>
+      <!-- <fieldset> -->
         <legend>
           <h3>Account Registration</h3>
         </legend>
@@ -144,8 +21,8 @@
           <div><label>Repeat email*</label><input type="text" name="name" required></div>
           <div><label>Repeat password*</label><input type="password" name="name" required></div> -->
 
-          <div><label>Account Name*</label><input type="text" name="name" id= "accountN" required></div>
-          <div><label>Starting Balance*</label><input type="text" name="name" id= "startingB"required></div>
+          <div><label>Account Name*</label><input type="text"  id= "accountN" required></div>
+          <div><label>Starting Balance*</label><input type="text" id= "startingB"required></div>
           <button >Register My Account</button>
           <!-- <div><label>Repeat email*</label><input type="text" name="name" required></div>
           <div><label>*</label><input type="password" name="name" required></div> -->
@@ -157,11 +34,12 @@
         </legend>
         <div  class="personal-details">
           
-            <div><label>Account Name*</label><input type="text" name="name" id="currentAccount" required></div>
+            <div><label>Account Name*</label><input type="text"  id="currentAccount" required></div>
             <button>Submit</button>
-            <div><label>Deposite*</label><input type="text" name="name"  required></div>
-            <div><label>Withdraw*</label><input type="text" name="name" required></div>
-            <div><label>Current Balance*</label><input type="text" name="name" required></div>
+            <div><label>Deposite*</label><input type="number" id="depositeNow" ></div>
+            <div><label>Withdraw*</label><input type="number"  id= "withdrawNow"></div>
+            <div><label>Current Balance*</label><input type="number"  id= "currentBalance"></div>
+            <button >Update</button>
             <!-- <div><label>Phone*</label><input type="text" name="name" required></div>
             <div><label>Street</label><input type="text" name="name"></div>
             <div><label>City*</label><input type="text" name="name" required></div> -->
@@ -278,7 +156,7 @@
           </div>
       </fieldset>
       <button type="submit" href="/">Submit</button> -->
-    </form>
+    </div>
     </div> 
     <script src="./scripts/Index.js" type="module"> </script>
   </body>
