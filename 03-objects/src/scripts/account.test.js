@@ -10,19 +10,19 @@ test ('test the class  parameters', () => {
     expect(account1.balance).toBe(35);
     expect(account2.accountName).toBe('002');
 })
-const account1= new ooStuff.account('001',35);
-const account2= new ooStuff.account('002',500);
-const account4= new ooStuff.account('004',7000);
+const account1= new ooStuff.Account('001',35);
+const account2= new ooStuff.Account('002',500);
+const account4= new ooStuff.Account('004',7000);
 const accounts=[];
     accounts.push(account1);
     accounts.push(account2);
-   const account3= accounts.push (new ooStuff.account('003',10000));
+   const account3= accounts.push (new ooStuff.Account('003',10000));
    accounts.push(account4);
 test ('test the constructor in class', () => {
     // const accounts=[];
     // accounts.push(account1);
     // accounts.push(account2);
-    // accounts.push (new ooStuff.account('003',10000));
+    // accounts.push (new ooStuff.Account('003',10000));
     expect(accounts[2].accountName).toBe('003');
 
     
