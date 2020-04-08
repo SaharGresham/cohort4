@@ -122,3 +122,44 @@ html, body {
     width: calc(60% + 16px);
     }
     }
+    
+#leftCard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: block;
+
+    background-color: rgb(193, 212, 16);
+    transition: 0.3s;
+    height: 70px;
+    width: 250px;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+.container  {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+     z-index: 1; 
+    
+    padding-top: 20px;
+   
+    /* padding-top: 20px; */
+  }
+  
+.Left{
+    height:100%;
+    width: 40%;
+    left:0;
+    padding: 10px;
+    display: left;
+    justify-content: space-between;
+    overflow:scroll;  
+  }
+  .Right{
+    Right:0; 
+    position:right;
+    display: right;
+    justify-content: space-between;
+    overflow:scroll;}

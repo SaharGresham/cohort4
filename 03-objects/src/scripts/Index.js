@@ -10,12 +10,15 @@ document.body.addEventListener("click", e => {
             let accountName = idaccountN.value;
             let startingBalance = parseFloat((idstartingB).value);
             let newAccount = new ooStuff.Account(accountName, startingBalance);
-            let newAccountController= new ooStuff.AccountController(newAccount,view);
-           
+            console.log (newAccount);
+            let newView =new ooStuff.View(newAccount);
+            console.log (newView);
+            let newAccountController= new ooStuff.AccountController(newAccount,newView);
+            newAccountController.showaccounts(newAccount);
             
             // newAccount.handleRegister ((accountName, startingBalance));
             
-            console.log (newAccount);
+            console.log (newAccountController);
             
         }
         if (e.target.textContent === "Submit") {

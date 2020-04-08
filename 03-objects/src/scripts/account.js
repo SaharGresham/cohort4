@@ -3,12 +3,12 @@ class AccountController {
     constructor(account, view) {
         this.account = account
         this.view = view
-        //display initial account
-        // this.showaccounts(this.account)
+        
+    // this.showaccounts(this.account)
     }
 
-    // showaccounts = allAccounts => {
-    //     this.view.displayallAccounts(allAccounts)
+    // showaccounts (account) {
+    //     displayAccountCards(account)}
     
     handleRegister = (accountName, StartingBalance) => {
         this.account.registerAccount(accountName, StartingBalance)
@@ -25,16 +25,66 @@ class AccountController {
 
       }
 class View {
-    constructor(){
-    // get the card
-    this.card= this.getElement (".Left")
-    //   The name of the account
-     this.title= this.createElement('h1')
-     this.title.textContent= ''
+    constructor(account) {
+    this.divCard=getElement('#leftCard')
+    const divCard= document. createElement ('div','leftCard');
+      let  divReference = document.querySelector('main-block2');
+   
+    // divCard.appendChild(document.createTextNode(`${this.get_name} <br> balance: ${this.get_Sbalance} `))
+    divCard.appendChild(document.createTextNode(`Hello`))
+    const checkbox = this.createElement('input');
+    checkbox.type = 'checkbox';
+    
+    divCard.appendChild (checkbox);
+    divReference.appendChild (divCard);
+        // set up accounts show up on left side of the page
+    
+        // this.div = this.getElement("#containerLeft")
+
+        // this.title = this.createElement('h1')
+        // this.title.textContent = 'Accounts'
+        // this.div.append (this.title)
+        return divCard;
+    }
+    createElement(tag, className) {
+        const element = document.createElement(tag)
+        if (className) element.classList.add(className)
+    
+        return element
+      }
+    
+      // Retrieve an element from the DOM
+      getElement(selector) {
+        const element = document.querySelector(selector)
+    
+        return element
+      }
+
+    get_name() {
+        let accountName = idaccountN.value;
+    }
+    get_Sbalance() {
+        let startingBalance = parseFloat((idstartingB).value)
+    }
+}
+
+function displayAccountCards (allAccounts) {
+    for (let i = 0, len = allAccounts.length; i < len; i++) {
+// allAccounts.forEach(account => {
+    const divCard= document. createElement ('div',"leftCard");
+   
+    divCard.appendChild(document.createTextNode(`${this.get_name} <br> balance: ${this.get_Sbalance} `))
+    const checkbox = this.createElement('input');
+    checkbox.type = 'checkbox';
+    
+    divCard.appendChild (checkbox);
+    console.log(divCard);
+    divCard.parentElement.appendChild (divCard);
 
 
-}
-}
+    }
+ }
+
  
  class Account {
      constructor(_accountName,StartingBalance){
@@ -89,4 +139,4 @@ class View {
     }
 }
 
- export default {search, Account, AccountController} ;
+ export default {search,displayAccountCards, Account, AccountController,View,} ;
