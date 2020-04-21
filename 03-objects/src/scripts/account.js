@@ -30,18 +30,15 @@ class AccountController {
     
         if (nextBalance>=0){
         const newAccount = new Account(key,nextAccountName,nextBalance);
-        // this.account=account;
+       
         console.log(newAccount);
         
         console.log(this.accountsHolder);
         this.accountsHolder.push(newAccount);
         
-    // this[this.accountsHolder]=account;
-        // this.accountsHolder.key=key;
-        // this.accountsHolder.accountName=nextAccountName;
-        // this.accountsHolder.balance=nextBalance;
+
         console.log(this.accountsHolder);
-        // console.log(newaccountsholder);
+
         
         
         const newCardID= newAccount.createAccountCard();
@@ -49,9 +46,7 @@ class AccountController {
         console.log(this.accountCards);
         this.accountCards.push(newCardID);
         console.log(newCardID);
-        return this;
-        // console.log (this.accountsHolder[0])
-        // const newallAccounts= new AccountController ()
+        
         
        return key;
        
@@ -65,20 +60,11 @@ class AccountController {
            console.log(theKey);
            const  finding = this.accountsHolder.find(x => x.key === theKey);
            console.log(finding);
-            // const finding=this.accountsHolder;
-            // console.log(this.accountsHolder);
-            // for (let i = 0, len = this.accountsHolder.length; i < len; i++)
-            //  if (this.accountsHolder[i].key=k){
-            //     //  console.log(this.accountsHolder[i].key=k)
+            
                 idcurrentAccount.value=finding.accountName;
-            //     // console.log(finding[i].accountName);
+         
                 idcurrentBalance.value=finding.balance;
                 
-
-            //     // const foundaccount= finding[i];
-            //     // console.log(foundaccount);
-            //     // return foundaccount;
-            //     }
                 }
             updateAccount (){
                 if (typeof(idcurrentAccount.value)==="string" ) {
@@ -116,10 +102,6 @@ class AccountController {
                     const  tempKey=String(key) ;
                     const kid= document.getElementById(tempKey);
                     if (kid.parentNode) {
-                        // remove a node from the tree, unless 
-                        // it's not in the tree already
-                        // console.log(node.parentNode);
-                        // let x=node.parentNode.ParentNode;
                         kid.parentNode.removeChild(kid);
                       }
                 }
@@ -182,50 +164,24 @@ class Account {
         this.balance = Number(StartingBalance);
          }
 
-         createAccountCard(){
-           const divCardkey=this.key;
-            const divReference = document.getElementById("idcontainerLeft");
-            const divCard = document.createElement("div");
-            this.divCard = divCard;
-            divCard.setAttribute("class", "leftCard");
-            divCard.setAttribute ("id",divCardkey);
-            
-           
-            
-            divCard.innerText= "Account: "+ this.accountName +'\n' +'Balance: '+ this.balance+'$'  ;
+    createAccountCard() {
+        const divCardkey = this.key;
+        const divReference = document.getElementById("idcontainerLeft");
+        const divCard = document.createElement("div");
+        this.divCard = divCard;
+        divCard.setAttribute("class", "leftCard");
+        divCard.setAttribute("id", divCardkey);
+        divCard.innerText = "Account: " + this.accountName + '\n' + 'Balance: ' + this.balance + '$';
 
-    
-            divReference.appendChild(divCard);
-            console.log(divCard);
-            console.log (divCard.id)
-            return [divCard.id];
-         } }
+
+        divReference.appendChild(divCard);
+        console.log(divCard);
+        console.log(divCard.id);
+        return [divCard.id];
+    }
+}
          
-        // depositN(amount) {
-
-        //     this.balance += amount;
-
-
-        // }
-        // withdraw(amount){
-        //     this.balance -= amount;
-        // }
-
-        // isPositive(amount,Account) {
-        //     const balance = amount;
-        //     if (this.balance < 0) {
-        //         alert('Amount must be positive!');
-        //         return false;
-        //     }
-        //     return true;
-        // }
-        // isAllowed(){
-        //     if (this.balance < 0) {
-        //         alert('You have negative balance! Please deposite money or bank charges will be applied in 5 business days.');
-        //     } else (this.balance >= 0); {
-        //         return true;
-        //     }
-        
+       
 
     
 

@@ -37,21 +37,6 @@ document.body.addEventListener("click", e => {
                 allAccounts.accountSummary();  
                 console.log( allAccounts);
             }
-         // allAccounts.accountSummary()}
-            // let accountN = Delete Accountdocument.getElementById("currentAccount").value;
-            // let currentB = allaccounts.find(x => x.accountName === accountN);
-            // let depositeN = parseFloat(document.getElementById("depositeNow").value);
-            // let withdrawN = parseFloat(document.getElementById("withdrawNow").value);
-
-            // if (depositeN > 0) {
-            //     let deposite1 = currentB.deposit(depositeN);
-            //     document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
-            // }
-            // else if (depositeN < 0) { alert('Amount must be positive!'); }
-
-            // if (withdrawN > 0) {
-            //     let withdraw1 = currentB.withdraw(withdrawN);
-            //     document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
-            //     currentB.isAllowed();
+         
 
             });
