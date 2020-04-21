@@ -1,54 +1,61 @@
 import ooStuff from './account.js';
 
+const allAccounts= new ooStuff.AccountController();
+console.log(allAccounts);
+
 document.body.addEventListener("click", e => {
-    console.log("You Clicked, at banking Page");
+    console.log("You Clicked, at banking Page") ;
+    const el= e.target;   
+    const elID=el.id;
+    console.log (el);
+    console.log(elID);
+    console.log(el.textContent)
 
-
-    if (e.target.nodeName === 'BUTTON') {
-
-        if (e.target.textContent === "Register My Account") {
-            let accountName = idaccountN.value;
-            let startingBalance = parseFloat((idstartingB).value);
-            let newAccount = new ooStuff.Account(accountName, startingBalance);
-            console.log (newAccount);
-            let newView =new ooStuff.View(newAccount);
-            console.log (newView);
-            let newAccountController= new ooStuff.AccountController(newAccount,newView);
-            newAccountController.showaccounts(newAccount);
-            
-            // newAccount.handleRegister ((accountName, startingBalance));
-            
-            console.log (newAccountController);
-            
-        }
-        if (e.target.textContent === "Submit") {
-            // console.log(allaccounts);
-            let accountN = document.getElementById("currentAccount").value;
-            let currentB = allaccounts.find(x => x.accountName === accountN);
-            let currentIndex = allaccounts.findIndex(x => x.accountName === accountN);
-            document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
-        }
-
-        if (e.target.textContent === "Update") {
-            let accountN = document.getElementById("currentAccount").value;
-            let currentB = allaccounts.find(x => x.accountName === accountN);
-            let depositeN = parseFloat(document.getElementById("depositeNow").value);
-            let withdrawN = parseFloat(document.getElementById("withdrawNow").value);
-
-            if (depositeN > 0) {
-                let deposite1 = currentB.deposit(depositeN);
-                document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
-            }
-            else if (depositeN < 0) { alert('Amount must be positive!'); }
-
-            if (withdrawN > 0) {
-                let withdraw1 = currentB.withdraw(withdrawN);
-                document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
-                currentB.isAllowed();
-
-            }
-        }
+    if (el.textContent === "Register My Account" && !(elID.includes ("k"))) {
+        idcontainerLeft.append( allAccounts.createAccount());
+        console.log(allAccounts);
+        idaccountN.value="";
+        idstartingB.value="";
+        // allAccounts.accountSummary()
     }
+    
+       
 
+       if (elID.includes ("k")) {
+           allAccounts.getAccount(elID);
+          console.log( allAccounts);
+        
+    }
+        
 
-})
+       
+            
+
+        if (el.textContent === "Update") {
+            allAccounts.updateAccount ();
+            console.log( allAccounts);
+            iddepositeNow.value="";
+            idwithdrawNow.value= "";
+            }
+            if(el.textContent=== "Delete Account"){
+                allAccounts.deleteAccount();
+                console.log( allAccounts);
+            }
+         // allAccounts.accountSummary()}
+            // let accountN = Delete Accountdocument.getElementById("currentAccount").value;
+            // let currentB = allaccounts.find(x => x.accountName === accountN);
+            // let depositeN = parseFloat(document.getElementById("depositeNow").value);
+            // let withdrawN = parseFloat(document.getElementById("withdrawNow").value);
+
+            // if (depositeN > 0) {
+            //     let deposite1 = currentB.deposit(depositeN);
+            //     document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
+            // }
+            // else if (depositeN < 0) { alert('Amount must be positive!'); }
+
+            // if (withdrawN > 0) {
+            //     let withdraw1 = currentB.withdraw(withdrawN);
+            //     document.getElementById("currentBalance").value = parseFloat((currentB.balance).toFixed(2));
+            //     currentB.isAllowed();
+
+            });

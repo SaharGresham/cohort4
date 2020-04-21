@@ -54,9 +54,9 @@ html, body {
     padding: 5px;
     vertical-align: middle;
     }
-    .checkbox {
+    /* .checkbox {
     margin-bottom: 10px;
-    }
+    } */
     select, .children, .gender, .bdate-block {
     width: calc(100% + 26px);
     padding: 5px 0;
@@ -84,16 +84,16 @@ html, body {
     width: 38px;
     vertical-align: unset;
     }
-    .checkbox input, .children input {
-    width: auto;
-    margin: -2px 10px 0 0;
-    }
-    .checkbox a {
+    /* .checkbox input, .children input {
+        margin-right: 1rem;
+        font-size: 2rem
+    } */
+    /* .checkbox a {
     color: #8ebf42;
     }
     .checkbox a:hover {
     color: #82b534;
-    }
+    } */
     button {
     width: 100%;
     padding: 10px 0;
@@ -121,18 +121,19 @@ html, body {
     select, .children, .gender, .bdate-block {
     width: calc(60% + 16px);
     }
-    }
     
-#leftCard {
+    
+ .leftCard {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     display: block;
+    font-size: 20px;
 
     background-color: rgb(193, 212, 16);
     transition: 0.3s;
     height: 70px;
-    width: 250px;
+    width: 550px;
     margin-bottom: 20px;
     padding: 20px;
     padding-bottom: 20px;
@@ -153,8 +154,8 @@ html, body {
     width: 40%;
     left:0;
     padding: 10px;
-    display: left;
-    justify-content: space-between;
+    display: center;
+    /* justify-content: space-between; */
     overflow:scroll;  
   }
   .Right{
@@ -162,4 +163,45 @@ html, body {
     position:right;
     display: right;
     justify-content: space-between;
-    overflow:scroll;}
+    overflow:scroll;
+    }
+    /* .check {
+        text-align:center;
+        margin: 0px 0px 0px 0px;
+        font-size: large;
+        background-color: lightcoral;
+    } */
+    /* .checkboxlabel {
+        border:1px solid #ccc;
+        padding:10px;
+        margin:0 0 10px;
+        display:block; 
+       }
+       
+       .checkboxlabel:hover {
+        background:#eee;
+        cursor:pointer;
+       } */
+       .checkboxes {
+        text-align:center;
+        margin: 0px;
+    
+        
+      }
+      .checkboxesinput{
+        margin:0px 100px 0px 100px;
+        font-size:60% ;
+       }
+       .checkboxeslabel{
+        margin: 0px 0x 0px 3px;
+        font-weight: bold;
+        font-size:16px;
+        
+      }
+      .accountinfodiv{
+        margin: 0px 0x 0px 3px;
+        font-weight: bold;
+        font-size:20px;
+        
+      }
+} 
