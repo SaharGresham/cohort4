@@ -111,11 +111,7 @@ class AccountController {
                     alert (" Please Choose an existing account!")
                 }
             }
-            // deleteAccountCard(key){
-            //     const tempKey=this.key;
-            //     const mother = document.getElementById ("idcontainerLeft")
-            //     const kid= document.getElementById(tempKey);
-            //     Node.removeChild (kid);
+            
                 deleteTheCard (key) { 
                     const  tempKey=String(key) ;
                     const kid= document.getElementById(tempKey);
@@ -140,7 +136,7 @@ class AccountController {
                     console.log (deleteIndex);
                     console.log(deleteKey);
                     console.log (this.accountsHolder)
-                    // this.AccountController.divCard
+                 
                     this.deleteTheCard(deleteKey);
                     this. accountsHolder.splice(deleteIndex,1);
                     console.log (this.accountsHolder);
@@ -154,26 +150,26 @@ class AccountController {
 
                    }}
             accountSummary(){
-                // console.log (this.accountsHolder)
-                // // cocst totalAccounts=this.accountsHolder;
-                // idAccountsNumber.value=this.accountsHolder.length;
+                console.log (this.accountsHolder)
+                // cocst totalAccounts=this.accountsHolder;
+                idAccountsNumber.value=this.accountsHolder.length;
             
-                // const balancesK = this.accountsHolder.map (temp => ({"key":temp.key, "balance": temp.balance}));
-                // // console.log (balancesK);
+                const balancesK = this.accountsHolder.map (temp => ({"key":temp.key, "balance": temp.balance}));
+                console.log (balancesK);
 
-                // const allBalances= balancesK.map(d => d.balance);
-                // // console.log (allBalances);
-                // idTotalBalance.value=allBalances.reduce((total, num) => total + num, 0);
+                const allBalances= balancesK.map(d => d.balance);
+                console.log (allBalances);
+                idTotalBalance.value=allBalances.reduce((total, num) => total + num, 0);
 
-                // const minBalance= Math.min.apply(Math,allBalances);
-                // idLowestValueMoney.value= minBalance;
-                // const minAccount= this.accountsHolder.find(x => x.balance =minBalance);
-                // idLowestValueName.value=minAccount.accountName;
+                const minBalance= Math.min.apply(Math,allBalances);
+                idLowestValueMoney.value= minBalance;
+                const minAccount= this.accountsHolder.find(x => x.balance ===minBalance);
+                idLowestValueName.value=minAccount.accountName;
                 
-                // const maxBalance= Math.max.apply(Math,allBalances);
-                // idHighestValueMoney.value= maxBalance;
-                // const maxAccount= this.accountsHolder.find(x => x.balance = maxBalance);
-                // idHighestValueName.value=maxAccount.accountName;
+                const maxBalance= Math.max.apply(Math,allBalances);
+                idHighestValueMoney.value= maxBalance;
+                const maxAccount= this.accountsHolder.find(x => x.balance === maxBalance);
+                idHighestValueName.value=maxAccount.accountName;
             }
         }
                

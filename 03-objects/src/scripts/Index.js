@@ -16,29 +16,25 @@ document.body.addEventListener("click", e => {
         console.log(allAccounts);
         idaccountN.value="";
         idstartingB.value="";
-        // allAccounts.accountSummary()
-    }
-    
-       
+        allAccounts.accountSummary();
+    }    
 
        if (elID.includes ("k")) {
            allAccounts.getAccount(elID);
           console.log( allAccounts);
-        
+          allAccounts.accountSummary();        
     }
         
-
-       
-            
-
         if (el.textContent === "Update") {
             allAccounts.updateAccount ();
+            allAccounts.accountSummary();  
             console.log( allAccounts);
             iddepositeNow.value="";
             idwithdrawNow.value= "";
             }
             if(el.textContent=== "Delete Account"){
                 allAccounts.deleteAccount();
+                allAccounts.accountSummary();  
                 console.log( allAccounts);
             }
          // allAccounts.accountSummary()}
