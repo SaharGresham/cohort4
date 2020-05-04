@@ -26,21 +26,21 @@ document.body.addEventListener("click", e => {
     }
 
     if (todo === "deposite") {
-        if (typeof (idcurrentAccount.value) === "string" && allAccounts.findAccount(idcurrentAccount.value));
-        {
+        // if (typeof (idcurrentAccount.value) === "string" && allAccounts.findAccount(idcurrentAccount.value));
+        // {
             let ourAccount1 = allAccounts.findAccount(idcurrentAccount.value);
             allAccounts.depositeIT(idcurrentAccount.value, iddepositeNow.value);
             idcurrentBalance.value = ourAccount1.balance;
-        }
+        // }
         iddepositeNow.value = "";
     }
     if (todo === "withdraw") {
-        if (typeof (idcurrentAccount.value) === "string" && allAccounts.findAccount(idcurrentAccount.value));
-        {
+        // if (typeof (idcurrentAccount.value) === "string" && allAccounts.findAccount(idcurrentAccount.value));
+        // {
             let ourAccount2 = allAccounts.findAccount(idcurrentAccount.value);
             allAccounts.withdrawIT(idcurrentAccount.value, idwithdrawNow.value);
             idcurrentBalance.value = ourAccount2.balance;
-        }
+        // }
         idwithdrawNow.value = "";
     }
 
