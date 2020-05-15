@@ -84,16 +84,7 @@ html, body {
     width: 38px;
     vertical-align: unset;
     }
-    /* .checkbox input, .children input {
-        margin-right: 1rem;
-        font-size: 2rem
-    } */
-    /* .checkbox a {
-    color: #8ebf42;
-    }
-    .checkbox a:hover {
-    color: #82b534;
-    } */
+    
     button {
     width: 100%;
     padding: 10px 0;
@@ -128,7 +119,7 @@ html, body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     display: block;
-    font-size: 20px;
+    font-size: 17px;
 
     background-color: rgb(193, 212, 16);
     transition: 0.3s;

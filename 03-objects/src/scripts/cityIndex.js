@@ -15,44 +15,82 @@ async function myloadScript() {
         divReference.appendChild(thediv);
     });
     updateGUI();
-} 
+}
 // updateGUI();
 
-document.body.addEventListener ('click', e => {
-       
- 
+document.body.addEventListener('click', async e => {
+
+
     const el = e.target;
     const elID = el.id;
     const todo = el.getAttribute("todo");
     const key = el.getAttribute("key");
-    
-    if (todo === "register") 
-    {console.log (theCommunity)
-   let newKey= theCommunity.createCityfromWebPage(idCityName.value, idCityLat.value,idCityLong.value, idCityPopulation.value);
-  let newCity =theCommunity.findCity(newKey);
-  console.log(newCity);
- 
-  divReference.appendChild(newCity.show());
+
+    if (todo === "register") {
+        console.log(theCommunity)
+        let newKey = await theCommunity.createCityfromWebPage(idCityName.value, idCityLat.value, idCityLong.value, idCityPopulation.value);
+
+        console.log(newKey);
+        let newCity = theCommunity.findCity(newKey);
+        console.log(newCity);
+        divReference.appendChild(newCity.show());
         idCityName.value = "";
         idCityLat.value = "";
-        idCityLong.value="";
-        idCityPopulation.value="";
+        idCityLong.value = "";
+        idCityPopulation.value = "";
         console.log(theCommunity);
     }
+    if (key) {
+        const chosenCity = theCommunity.findCity(key)
+        idcurrentCity.value = chosenCity.name;
+        idcurrentPopulation.value = chosenCity.population;
 
+        idcurrentSphere.value = theCommunity.whichSphere(key);
+        idKey.value = key;
+    }
+    if (todo === "MoveIn") {
+
+
+        let ourCity1 = theCommunity.findCity(idKey.value);
+        await theCommunity.addPopulation(idKey.value, idMoveIn.value)
+        idcurrentPopulation.value = ourCity1.population;
+    }
+
+    if (todo === "MoveOut") {
+        let ourCity2 = theCommunity.findCity(idKey.value);
+        await theCommunity.subtractPopulation(idKey.value, idMOveOut.value)
+        idcurrentPopulation.value = ourCity2.population;
+    }
+    if (todo === "delete") {
+        
+          await  theCommunity.deleteCity(idKey.value, divReference);
+            // console.log(theCommunity)
+        
+        idcurrentCity.value = "";
+        idcurrentPopulation.value = "";
+        idKey.value = "";
+        idcurrentSphere.value = "";
+        idMoveIn.value="";
+        idMOveOut.value="";
+    }
+    if (todo){
+       updateGUI();
+    }
 
 })
 
 
-    function updateGUI () {
-        idTotalPop.value = theCommunity.updateDisplay()[0];
-        cityNumbers .value = theCommunity.updateDisplay()[1];
-        idMinLat.value = theCommunity.updateDisplay()[2];
-        idMinCity.value = theCommunity.updateDisplay()[3];
-        idMaxLat.value = theCommunity.updateDisplay()[4];
-        idMaxCity.value =theCommunity.updateDisplay()[5];
-    }
-    
+
+
+function updateGUI() {
+    idTotalPop.value = theCommunity.updateDisplay()[0];
+    cityNumbers.value = theCommunity.updateDisplay()[1];
+    idMinLat.value = theCommunity.updateDisplay()[2];
+    idMinCity.value = theCommunity.updateDisplay()[3];
+    idMaxLat.value = theCommunity.updateDisplay()[4];
+    idMaxCity.value = theCommunity.updateDisplay()[5];
+}
+
 
 
 

@@ -81,13 +81,14 @@ class Community {
         return key;
     }
 
-    deleteCity(key, node) {
+    async deleteCity(key, node) {
         const deletedCity = this.cities.find(x => x.key === key);
         const deletedIndex = this.cities.indexOf(this.cities.find(x => x.key === key));
         // const deleteKey = this.cities.find(x => x.accountName === name).key;
         const deleteddiv = deletedCity.divCard;
 
         deleteddiv.parentNode.removeChild(deleteddiv);
+        await fetchCities.postData(fetchCities.url + 'delete', {"key":deletedCity.key});
 
         this.cities.splice(deletedIndex, 1);
     }
@@ -100,34 +101,50 @@ class Community {
         console.log(this.cities);
         this.counter = (this.cities.length) + 1;
         console.log(this.counter)
-        // newdata.forEach(element => {
-
-        // });
-        // let newC =  new City(city.key, city.name, city.longitude, city.latitude, city.population)
-        // // this.createCity(thiscity.name,thiscity.latitude,thiscity.longitude, thiscity.latitude, thiscity.population,thisnode,thiscity.key)// this.cities.push(thiscity)
-        // // node.appendChild(thiscity.show());
-        // this.cities.push(newC);
-        //  this.counter++;
-
-
-
-        //  console.log(this.counter)
+       
         return this;
     }
-    // findMaxKey() {
-    //     const thekeys = this.cities.map(tempmax => (tempmax.key));
-    //     console.log(thekeys);
-    //     const maxKey = Math.max.apply(Math, thekeys);
-    //     return maxKey;
-    // }
+    async addPopulation (key, increasePop) {
+        const currentCity1 = this.findCity(key);
+        console.log(currentCity1);
+        const cc1 = new City (currentCity1.key, currentCity1.name, currentCity1.latitude, currentCity1.longitude, currentCity1.population);
+        console.log (cc1);
+        if ( increasePop>= 0) {
+            
+            cc1.moveIn(Number(increasePop));
+            currentCity1.population = Number(cc1.population);
+            currentCity1.divCard.innerText = "City: " + currentCity1.name + '\n' + 'Latitude: ' + currentCity1.latitude +'\n' +'Longitude: '+ currentCity1.longitude +
+            '\n'+ "Population: "+ currentCity1.population;
+            await fetchCities.postData(fetchCities.url + 'update', {"key":String(currentCity1.key), "name" :currentCity1.name, "latitude" :currentCity1.latitude, "longitude" : currentCity1.longitude, "population": Number(currentCity1.population)});
+            return currentCity1;
+        }
+        else if (increasePop < 0) { alert('deposite must be positive!'); }
+    }
+    
+    async subtractPopulation (key, decreasePop) {
+        const currentCity2 = this.findCity(key);
+        console.log(currentCity2);
+        const cc2 = new City (currentCity2.key, currentCity2.name, currentCity2.latitude, currentCity2.longitude, currentCity2.population);
+        console.log (cc2);
+        if (decreasePop >= 0) {
+            
+            cc2.moveOut(Number(decreasePop));
+            currentCity2.population = Number(cc2.population);
+            currentCity2.divCard.innerText = "City: " + currentCity2.name + '\n' + 'Latitude: ' + currentCity2.latitude +'\n' +'Longitude: '+ currentCity2.longitude +
+            '\n'+ "Population: "+ currentCity2.population;
+            await fetchCities.postData(fetchCities.url + 'update', {"key":String(currentCity2.key), "name" :currentCity2.name,"latitude" :currentCity2.latitude, "longitude" : currentCity2.longitude, "population": Number(currentCity2.population)});
+            return currentCity2;
+        }
+        else if (decreasePop < 0) { alert('deposite must be positive!'); }
+    }
     updateDisplay() {
        let summeries=[];
       summeries[0]  =this.getPopulation()[0];
       summeries[1]  =this.getPopulation()[1];
       summeries[2]  =this.getMostNorthen()[0];
       summeries[3]  =this.getMostNorthen()[1];
-      summeries[4]  =this.getPopulation()[0];
-      summeries[5]  =this.getPopulation()[1];
+      summeries[4]  =this.getMostSouthern()[0];
+      summeries[5]  =this.getMostSouthern()[1];
       return summeries;
 
     }
@@ -208,15 +225,5 @@ const fetchCities = {
         // console.log(json, typeof(json));
         return json;
     },
-    // async updateDatafromServer (){
-    //     let data;
-    //     try {
-    //         data =await fetchCities.postData (url+'all');
-    //         return data;}
-    //         catch (error){
-    //             console.error ('Error:', error)
-    //         }
-
-    //     }
 }
 export default { Community, City, fetchCities }

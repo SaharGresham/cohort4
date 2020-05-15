@@ -2,6 +2,7 @@
 global.fetch = require('node-fetch');
 
 import stuff from './comunitycity.js' ;
+
 const url = 'http://localhost:5000/';
 
 test ('test the plumbing comunitycity', ()=> {
@@ -76,16 +77,26 @@ test('test the  getCitiesfromServer ', async () => {
     data = await stuff.fetchCities.postData(url + 'all');
     
     expect(data.status).toEqual(200);
-    // console.log(data);
+  
     expect(data.length).toBe(3);
 
    let community1 =new stuff.Community();
-    // console.log(community1);
+  
     await community1.getCitiesfromServer();
     expect (community1.cities.length).toBe(3);
-    expect (community1.counter).toBe(3);
+    expect (community1.counter).toBe(4);
+    community1.addPopulation("3",3000);
+    expect (community1.cities[2].population).toBe(11868);
+    community1.subtractPopulation("1",47000);
+    expect (community1.cities[0].population).toBe (1500484);
+    community1.addPopulation("2",600000 );
+    expect (community1.getPopulation()).toStrictEqual([3093632,3]);
+    const divReferenceTest1=document.createElement("div");
+    
 
-    // console.log (community1);
+   
+
+    
 })
 
 
