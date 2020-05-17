@@ -92,11 +92,7 @@ test('test the  getCitiesfromServer ', async () => {
     community1.addPopulation("2",600000 );
     expect (community1.getPopulation()).toStrictEqual([3093632,3]);
     const divReferenceTest1=document.createElement("div");
-    
-
-   
-
-    
+     
 })
 
 
@@ -127,19 +123,19 @@ test ('test Community', async() => {
     const divReferenceTest=document.createElement("div");
     const thecities= new stuff.Community();
     // console.log (thecities);
-    expect(thecities.key).toBe (1);
+    expect(thecities.counter).toBe (1);
     
     
-    thecities.createCity ('Calgary',51.0447,114.0719, 1547484);
+    thecities.createCityfromWebPage ('Calgary',51.0447,114.0719, 1547484);
     expect (thecities.cities.length).toBe (1);
-    expect(thecities.createCity ('Edmonton',53.5461,113.4938,981280)).toBe ('2');
+    thecities.createCityfromWebPage('Edmonton',53.5461,113.4938,981280);
     
    
     expect (thecities.cities[1].name).toBe("Edmonton");
     expect (thecities.cities[0].population).toBe(1547484);
     expect (thecities.nextKey()).toBe('3');
-    thecities.createCity ('Innesfail', 52.0274,113.9502, 8868);
-    console.log (thecities.createCity ('Innesfail', 52.0274,113.9502, 8868));
+    thecities.createCityfromWebPage ('Innesfail', 52.0274,113.9502, 8868);
+    console.log (thecities.createCityfromWebPage('Innesfail', 52.0274,113.9502, 8868));
     expect(thecities.findCity('5').latitude).toBe(52.0274);
     console.log(thecities.findCity('5'));
     expect (thecities.whichSphere('1')).toBe("Northern");
@@ -151,4 +147,19 @@ test ('test Community', async() => {
     expect(all[0]).toBe (2546500);
     thecities.deleteCity (5,divReferenceTest);
     expect (thecities.cities.length).toBe(3);
+    expect (thecities.nextKey()).toBe ("6")
 })
+
+test ('130E Object reference', () => {
+    const myCity = new stuff.City (4, 'Red Deer', 52.26, 113.81, 128000);
+    const myFav = myCity;
+
+    expect(myCity.population).toBe(128000);
+    expect(myFav.population).toBe(128000);
+    myCity.moveIn(2500);
+    expect(myCity.population).toBe(130500);
+    expect(myFav.population).toBe(130500);
+    myFav.moveOut(500);
+    expect(myCity.population).toBe(130000);
+    expect(myFav.population).toBe(130000);
+});
