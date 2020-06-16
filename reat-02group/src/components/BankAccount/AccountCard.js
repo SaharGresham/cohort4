@@ -8,7 +8,7 @@ class AccountCard extends Component {
            
           }
     }
-   
+
     render() {
         
         // console.log(this.props)

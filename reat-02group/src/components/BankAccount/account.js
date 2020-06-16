@@ -125,15 +125,15 @@ class Account {
         this.balance = Number(StartingBalance);
     }
 
-    createAccountCard() {
-        const divCardkey = this.key;
-        const divCard = document.createElement("div");
-        this.divCard = divCard;
-        divCard.setAttribute("class", "leftCard");
-        divCard.setAttribute("key", divCardkey);
-        divCard.innerText = "Account: " + this.accountName + '\n' + 'Balance: ' + this.balance + '$';
-        return divCard;
-    }
+    // createAccountCard() {
+    //     const divCardkey = this.key;
+    //     const divCard = document.createElement("div");
+    //     this.divCard = divCard;
+    //     divCard.setAttribute("class", "leftCard");
+    //     divCard.setAttribute("key", divCardkey);
+    //     divCard.innerText = "Account: " + this.accountName + '\n' + 'Balance: ' + this.balance + '$';
+    //     return divCard;
+    // }
     accountDeposite(amount) {
         return (this.balance += parseFloat(amount));
     }
