@@ -72,7 +72,7 @@ function App() {
         </div>
       </header>
       <div className="AppArea">
-        {appToRun == "Starter" &&
+        {appToRun === "Starter" &&
           <div>
             <Starter sMessageArea={messageArea} />
           </div>
