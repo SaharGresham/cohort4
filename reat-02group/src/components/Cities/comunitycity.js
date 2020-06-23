@@ -30,7 +30,10 @@ class Community {
     }
 
     getMostNorthen() {
-        const sumNorthen = [];
+        const sumNorthen = [0,"cityName"];
+        if (this.cities.length===0){
+            alert("The last city will be deleted. Please create another City.")
+        }else{
         const allLatitudes = this.cities.map(temp => ({ "key": temp.key, "latitude": temp.latitude }));
         // console.log (allLatitudes)
         const Latitudes = allLatitudes.map(c => c.latitude);
@@ -40,10 +43,15 @@ class Community {
         sumNorthen[0] = maxLatitude;
         sumNorthen[1] = MNorthenCity.name;
         // console.log (sumNorthen);
+        }
         return sumNorthen;
     }
     getMostSouthern() {
-        const sumSouthern = [];
+        
+        const sumSouthern = [0,"cityName"];
+        if (this.cities.length===0){
+            alert("The last city will be deleted. Please create another City.")
+        }else{
         // console.log(this.cities);
         const southLatitudes = this.cities.map(tempSouth => ({ "key": tempSouth.key, "latitude": tempSouth.latitude }));
         // console.log(southLatitudes)
@@ -55,17 +63,22 @@ class Community {
         sumSouthern[0] = minLatitude;
         sumSouthern[1] = MSouthernCity.name;
         // console.log(sumSouthern);
+        }
         return sumSouthern;
     }
 
     getPopulation() {
-        const totalCities = [];
+        const totalCities = [0,0];
+        if (this.cities.length===0){
+            alert("The last city will be deleted. Please create another City.")
+        }else{
         const allPop = this.cities.map(tempall => ({ "key": tempall.key, "population": tempall.population }));
         const pops = allPop.map(f => f.population);
         totalCities[0] = pops.reduce((total, num) => total + num, 0);
         console.log('hello from getPopulation', totalCities);
         // allSummeries[0] = allBalances.reduce((total, num) => total + num, 0);
         totalCities[1] = this.cities.length;
+        }
         return totalCities;
     }
 
