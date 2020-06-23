@@ -10,6 +10,42 @@ let x = new comunitycity.Community();
 function get(id) {
     return document.getElementById(id).value;
 }
+function whichSphere(latitude) {
+    
+    if (latitude > 0) {
+        return "Northern";
+    }
+    else if (latitude < 0) {
+        return "Southern";
+    }
+    else if (latitude === 0) {
+        return "Equator";
+    }
+    else return "NotValid"
+}
+
+function howBig(thepopulation) {
+    
+    if (thepopulation > 1 && thepopulation < 100) {
+        return "Hamlet"
+    }
+    if (thepopulation >= 100 && thepopulation < 1000) {
+        return "Village";
+    }
+    if (thepopulation >= 1000 && thepopulation < 20000) {
+        return "Town";
+    }
+    if (thepopulation >= 20000 && thepopulation <= 100000) {
+        return " Large Town";
+    }
+    if (thepopulation > 100000) {
+        return "City";
+    }
+}
+
+
+
+
 class CityCTRL extends Component {
 
     constructor(props) {
@@ -17,11 +53,13 @@ class CityCTRL extends Component {
         this.moveInPopulation = this.moveInPopulation.bind(this);
         this.moveOutPopulation = this.moveOutPopulation.bind(this);
         this.delete = this.delete.bind(this);
+        // this.citySphere = this.citySphere.bind(this);
         this.state = {
             x: x,
             // in population array the 0 is the total population and the next is
             // the number of cities
             populationArray: [0, 0],
+            // hemisphere: "",
             northernArray: [0, "cityName"],
             southernArray: [0, "cityName"]
         }
@@ -39,24 +77,17 @@ class CityCTRL extends Component {
         this.CreateReactComponents();
     }
    
-    // componentDidUpdate(prevProps,prevState,SS){
-    //     console.log('Update:', prevState.x);
-    //     console.log(this.state.x)
-    //     if (prevState.x.cities === this.state.x.cities){ 
-            
-    //         // this.loadScript();
-    //         this.CreateReactComponents();
-    //     }
-    // }
-      
-
     async mySave() {
 
         const cityName = get("idCityName");
         const cityPopulation = get("idCityPopulation");
         const cityLat = get("idCityLat");
         const cityLong = get("idCityLong");
-        const theCity = await x.createCityfromWebPage(cityName, cityLat, cityLong, cityPopulation);
+        const cityHemisphere = whichSphere(cityLat);
+        const citySize=howBig(cityPopulation);
+        // const citySphere = citySphere(key1);
+        const theCity = await x.createCityfromWebPage(cityName, cityLat, cityLong, cityPopulation,cityHemisphere,citySize);
+        // const hemisphere= await x.citySphere(cityLat);
         await this.CreateReactComponents();
     }
 
@@ -81,12 +112,12 @@ class CityCTRL extends Component {
                     latitude={x.cities[i].latitude}
                     longitude={x.cities[i].longitude}
                     population={x.cities[i].population}
+                    hemisphere={x.cities[i].hemisphere}
+                    communitySize={x.cities[i].communitySize}
                     moveInPopulation={this.moveInPopulation}
                     moveOutPopulation={this.moveOutPopulation}
                     delete= {this.delete}
-                // deposit ={this.deposit}
-                // withdraw = {this.withdraw}
-                // delete = {this.delete}
+                
 
                 />
             )
@@ -150,7 +181,6 @@ class CityCTRL extends Component {
         this.citySouthern();
 
     }
-
     async cityPopulation () {
         console.log("from total pop, most N/S")
         const totalPopulation = this.state.x.getPopulation();
@@ -159,6 +189,17 @@ class CityCTRL extends Component {
         this.setState({ populationArray: totalPopulation })
         // this.CreateReactComponents();
     }
+
+//    async citySphere (key1) {
+//         console.log("from city Sphere")
+//         const cSphere = await this.state.x.whichSphere(key1);
+//         console.log(cSphere)
+
+        // this.setState({ northernArray: cNorthern })
+        // this.CreateReactComponenSphere
+        // this.setState({hemisphere: cSphere});
+        // return cSphere;
+    // }
     
     cityNorthern = () => {
         console.log("from city Northern, most N/S")

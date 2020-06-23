@@ -69,12 +69,12 @@ class Community {
         return totalCities;
     }
 
-   async createCityfromWebPage(name, latitude, longitude, population) {
+   async createCityfromWebPage(name, latitude, longitude, population,hemisphere,communitySize) {
 
         let key = String(this.nextKey());
 
 
-        const newCity = new City(key, name, latitude, longitude, population);
+        const newCity = new City(key, name, latitude, longitude, population,hemisphere,communitySize);
         console.log(key);
         this.cities.push(newCity);
         await fetchCities.postData (fetchCities.url+'add', newCity);
@@ -98,7 +98,7 @@ class Community {
         let newData = await fetchCities.postData(fetchCities.url + 'all')
         console.log(newData);
 
-        this.cities = newData.map(city => new City(city.key, city.name, city.longitude, city.latitude, city.population))
+        this.cities = newData.map(city => new City(city.key, city.name, city.longitude, city.latitude, city.population,city.hemisphere,city.communitySize))
         console.log(this.cities);
         this.counter = (this.cities.length) + 1;
         console.log(this.counter)
@@ -154,12 +154,14 @@ class Community {
 
 class City {
 
-    constructor(key, name, latitude, longitude, population) {
+    constructor(key, name, latitude, longitude, population,hemisphere,communitySize) {
 
         this.name = String(name);
         this.latitude = parseFloat(latitude);
         this.longitude = parseFloat(longitude);
         this.population = Number(population);
+        this.hemisphere = String(hemisphere);
+        this.communitySize=String (communitySize);
         this.key = String(key);
     }
     show() {
